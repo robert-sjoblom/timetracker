@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Time Tracker",
+  "version": "1.0",
+  "description": "Simple time tracking extension with daily reports",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{9a9390fe-7239-4e7e-a127-1ea6f127e9d6}",
+      "strict_min_version": "100.0"
+    }
+  },
+  "web_accessible_resources": [
+    "report.html"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Time Tracker",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

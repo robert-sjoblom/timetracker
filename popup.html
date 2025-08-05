@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+    <style>
+        /* Tailwind CSS Reset and Base Styles */
+        *, ::before, ::after {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb;
+        }
+        
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.5;
+            color: #374151;
+            background-color: #ffffff;
+        }
+        
+        /* Utility Classes */
+        .w-64 { width: 16rem; }
+        .p-4 { padding: 1rem; }
+        .p-2 { padding: 0.5rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .font-bold { font-weight: 700; }
+        .font-medium { font-weight: 500; }
+        .text-center { text-align: center; }
+        .text-gray-600 { color: #4b5563; }
+        .text-white { color: #ffffff; }
+        .bg-blue-500 { background-color: #3b82f6; }
+        .bg-red-500 { background-color: #ef4444; }
+        .bg-green-500 { background-color: #10b981; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .hover\\:bg-blue-600:hover { background-color: #2563eb; }
+        .hover\\:bg-red-600:hover { background-color: #dc2626; }
+        .hover\\:bg-green-600:hover { background-color: #059669; }
+        .rounded { border-radius: 0.25rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .border { border-width: 1px; }
+        .border-gray-300 { border-color: #d1d5db; }
+        .w-full { width: 100%; }
+        .block { display: block; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .cursor-pointer { cursor: pointer; }
+        .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="w-64 p-4">
+    <div class="text-center mb-4">
+        <h1 class="text-lg font-bold mb-2">Time Tracker</h1>
+        <div id="currentStatus" class="text-sm text-gray-600 mb-4">
+            Status: <span id="statusText">Stopped</span>
+        </div>
+        <div id="currentTime" class="text-sm text-gray-600 mb-4 hidden">
+            Current session: <span id="sessionTime">00:00</span>
+        </div>
+    </div>
+    
+    <div class="mb-4">
+        <button id="toggleBtn" class="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded transition cursor-pointer">
+            Start
+        </button>
+    </div>
+    
+    <div class="mb-4">
+        <button id="reportBtn" class="w-full py-2 px-4 bg-green-500 hover:bg-green-600 text-white font-medium rounded transition cursor-pointer">
+            Generate Report
+        </button>
+    </div>
+    
+    <div id="todayTime" class="text-center text-sm text-gray-600 bg-gray-100 rounded p-2">
+        Today: <span id="todayTimeValue">00:00</span>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
